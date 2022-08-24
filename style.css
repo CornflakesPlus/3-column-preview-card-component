@@ -1,0 +1,146 @@
+/* >>>>>>>>  GENERAL BASE STYLES  <<<<<<<< */
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 95%);
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    margin: 70px 20px; 
+}
+
+
+main, 
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+}
+
+
+main {
+    max-width: 950px; 
+}
+
+
+h1 {
+    font-family: 'Big Shoulders Display', cursive;
+    font-weight: 700;
+    color: hsl(0, 0%, 95%);
+}
+
+
+p {
+    color: hsla(0, 0%, 100%, 0.75);
+    line-height: 1.5rem;
+    margin-bottom: 60px;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+/* >>>>>>>>  GENERAL CLASS STYLES  <<<<<<<< */
+
+.section {
+    align-self: stretch;    /* Used stretch value to keep the sections equal in height */
+}
+
+
+.sedan, 
+.suv, 
+.luxury {
+    padding: 70px 40px;
+}
+
+
+.sedan {
+    background-color: hsl(31, 77%, 52%);
+    border-radius: 20px 20px 0 0;
+}
+
+
+.suv {
+    background-color: hsl(184, 100%, 22%);
+}
+
+
+.luxury {
+    background-color: hsl(179, 100%, 13%);
+    border-radius: 0 0 20px 20px;
+}
+
+
+.sedan-link, 
+.suv-link, 
+.luxury-link {
+    border-radius: 5rem;
+    padding: 0.8rem 2rem;
+    background-color:hsl(0, 0%, 95%);
+    margin-top: auto;     /* Used margin:auto to align the buttons to the bottom of the section */
+}
+
+
+.sedan-link {
+    color: hsl(31, 77%, 52%);
+}
+
+
+.suv-link {
+    color: hsl(184, 100%, 22%);
+}
+
+
+.luxury-link {
+    color: hsl(179, 100%, 13%);
+}
+
+
+.button:hover {
+    background-color: inherit;
+    color:hsl(0, 0%, 95%);
+    border: solid hsl(0, 0%, 95%) 0.1rem;
+    padding: 0.7rem 2rem;
+}
+
+
+.attribution {
+    margin-top: 20px;
+}
+
+
+/* >>>>>>>>  MEDIA QUERIES  <<<<<<<< */
+
+@media screen and (min-width: 870px) {
+    main{
+        flex-direction: row;
+    }
+
+    .sedan {
+        border-radius: 20px 0 0 20px;
+    }
+
+    .luxury {
+        border-radius: 0 20px 20px 0px;
+    }
+}
+
+
+/* >>>>>>>>  END <<<<<<<< */
+
+/* NOTES
+The most trickiest part for me was to set the hover effect without distorting the lenght of the columns.
+When the User hovers over the "Learn More" button, the columns would increase it's height because of the border
+property "border: solid hsl(0, 0%, 95%) 0.1rem;" (See line of code 107). In order to fix this, I set
+the top & bottom padding of the button element to 0.7rem (Intial value was 0.8rem, see line of code 83 and 108)
+which based on calculation was perfection. This was the work around which was on top of my head at this time.
+*/
